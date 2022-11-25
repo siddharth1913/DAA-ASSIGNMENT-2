@@ -34,11 +34,22 @@ h2(key) = (key/11)%11
 ###### Insert:75. h1(75) = 9.But 53 is already there at 9. We place 75 in table 1 & 53 in table 2 at h2(53). 
 ![Image](https://media.geeksforgeeks.org/wp-content/cdn-uploads/ch5.png)
 
+###### Insert:100. h1(100) = 1. 
+![Image](https://media.geeksforgeeks.org/wp-content/cdn-uploads/ch.png)
 
-![Image](https://media.geeksforgeeks.org/wp-content/cdn-uploads/ch6.png)
-
-![Image](https://media.geeksforgeeks.org/wp-content/cdn-uploads/ch7.png)
-
+###### Insert:67. h1(67) = 1. But 100 is already there at 1. We place 67 in table 1 & 100 in table 2.
 ![Image](https://media.geeksforgeeks.org/wp-content/cdn-uploads/ch8.png)
 
+###### Insert:105. h1(105) = 6. But 50 is already there at 6. We place 105 in table 1 & 50 in table 2 at h2(50) = 4. Now 53 has been displaced. h1(53) = 9. 75 displaced: h2(75) = 6.
 ![Image](https://media.geeksforgeeks.org/wp-content/cdn-uploads/ch9.png)
+
+###### Insert:3. h1(3) = 3.
+![Image](https://media.geeksforgeeks.org/wp-content/cdn-uploads/ch10.png)
+
+###### Insert:36. h1(36) = 3. h2(3) = 0.
+![Image](https://media.geeksforgeeks.org/wp-content/cdn-uploads/ch11.png)
+
+###### Insert:39. h1(39) = 6. h2(105) = 9. h1(100) = 1. h2(67) = 6. h1(75) = 9. h2(53) = 4. h1(50) = 6. h2(39) = 3.Here, the new key 39 is displaced later in the recursive calls to place 105, which it displaced.
+![Image](https://media.geeksforgeeks.org/wp-content/cdn-uploads/ch12.png)
+
+###### Application : OTP Generation.
