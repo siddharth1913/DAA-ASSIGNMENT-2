@@ -21,3 +21,24 @@ h1(key) = key%11
 h2(key) = (key/11)%11
 ```
 ![Image](https://media.geeksforgeeks.org/wp-content/cdn-uploads/ch1.png)
+
+###### Insert 20 at h1(20):
+![Image](https://media.geeksforgeeks.org/wp-content/cdn-uploads/ch2.png)
+
+###### Insert 50:
+![Image](https://media.geeksforgeeks.org/wp-content/cdn-uploads/ch3.png)
+
+###### Insert 53: h1(53)=9.But 20 is already there at 9. We place 53 in table 1 & 20 in table 2 at h2(20).
+![Image](https://media.geeksforgeeks.org/wp-content/cdn-uploads/ch4.png)
+
+###### Insert:75. h1(75) = 9.But 53 is already there at 9. We place 75 in table 1 & 53 in table 2 at h2(53). 
+![Image](https://media.geeksforgeeks.org/wp-content/cdn-uploads/ch5.png)
+
+
+![Image](https://media.geeksforgeeks.org/wp-content/cdn-uploads/ch6.png)
+
+![Image](https://media.geeksforgeeks.org/wp-content/cdn-uploads/ch7.png)
+
+![Image](https://media.geeksforgeeks.org/wp-content/cdn-uploads/ch8.png)
+
+![Image](https://media.geeksforgeeks.org/wp-content/cdn-uploads/ch9.png)
