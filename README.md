@@ -54,6 +54,6 @@ h2(key) = (key/11)%11
 
 ## Application : 
 ###### Cuckoo Hashing Can be used in
+- Whenever we used Dark-web a special password is generated and sent on our mail
 - OTP Generation.
 - ATM pin generation.
-- Whenever we used Dark-web a special password is generated and sent on our mail. 
