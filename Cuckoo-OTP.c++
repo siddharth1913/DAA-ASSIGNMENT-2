@@ -12,7 +12,7 @@ int hashtable[part][MAXN];
 int pos[part];
 
 // Initialise hash table with dummy values
-void initTable()
+void initialiseTable()
 {
     for (int j = 0; j < MAXN; j++)
         for (int i = 0; i < part; i++)
@@ -34,18 +34,16 @@ int hash(int function, int key)
 // It places the key in the appropriate position.If 1st array is full then shifts the current element into position defined by hash function in 2nd array and then inserts the element in the 1st array
 void place(int key, int tableID, int cnt, int n)
 {
-    if (cnt == n)
+    if (cnt==n)
     {
         return;
     }
-
-    for (int i = 0; i < part; i++)
+    for (int i=0; i<part; i++)
     {
         pos[i] = hash(i + 1, key);
         if (hashtable[i][pos[i]] == key)
             return;
     }
-
     if (hashtable[tableID][pos[tableID]] != INT_MIN)
     {
         int dis = hashtable[tableID][pos[tableID]];
@@ -56,40 +54,33 @@ void place(int key, int tableID, int cnt, int n)
         hashtable[tableID][pos[tableID]] = key;
 }
 
-// printable function is used for printing OTP
-void printTable()
-{
-    printf("\nThe OPT generated is : ");
-    for (int i = 0; i < part; i++)
-        for (int j = 0; j < MAXN; j++)
-            (hashtable[i][j] == INT_MIN) ? printf("") : printf("%d", j);
-    printf("\n\n");
-}
-
-//Main function that implements all the above functions
+//Main function that implements all the above functions and prints the generated password
 void cuckoo(int keys[], int n)
 {
-    //initialise hashtable
-    initTable();
+    initialiseTable();
 
     //place keys in hashtable
     for (int i = 0, cnt = 0; i < n; i++, cnt = 0)
         place(keys[i], 0, cnt, n);
 
-    printTable();
+    printf("\nThe password generated is : ");
+    for (int i = 0; i < part; i++)
+        for (int j = 0; j < MAXN; j++)
+            (hashtable[i][j] == INT_MIN) ? printf("") : printf("%d", hashtable[i][j]);
+    printf("\n\n");
 }
 
-// function used to generate requestId so that each n every person get different OTP.
+// function used to generate password for accessing the dark web side.
 std::string random_string(size_t length)
 {
-    auto randchar = []() -> char
+    auto randomchar = []() -> char
     {
-        const char chararr[] = "9876543210";
-        const size_t max_index = (sizeof(chararr) - 1);
-        return chararr[rand() % max_index];
+        char chararr[] = "1234567890";
+        size_t max_ind = (sizeof(chararr) - 1);
+        return chararr[rand() % max_ind];
     };
     std::string str(length, 0);
-    std::generate_n(str.begin(), length, randchar);
+    std::generate_n(str.begin(), length, randomchar);
     return str;
 }
 
@@ -98,7 +89,7 @@ int main()
     std::string s = random_string(30);
     int keys_1[11];
 
-    for (int i = 0, j = 0; i < s.size(), j < 10; i += 2, j++){
+    for (int i=0, j=0; i<s.size(), j<10; i+=2, j++){
         std::stringstream data(s.substr(i, 2));
         int x = 0;
         data >> x;
